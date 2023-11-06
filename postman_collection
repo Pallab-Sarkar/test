@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "656dae29-07b4-4072-a148-e1fc04b35c1f",
+		"name": "Crud api's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register (or Create User)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fullName",
+									"value": "Pallab sarkar",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "pallabsarkar31@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "8910279639",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pallabsarkar31@gmail.com\",\r\n    \"otp\": \"2425\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/verify-otp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pallabsarkar31@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pallabsarkar31@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/resend-otp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pallabsarkar31@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get ALL user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/getUserListByCondn",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"getUserListByCondn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/647c26e7226f692f55f2d8ae",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"647c26e7226f692f55f2d8ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\" : 800200301\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/647c26e7226f692f55f2d8ae",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"647c26e7226f692f55f2d8ae"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Create Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dummyKey1\": \"value1\",\r\n    \"dummyKey2\": \"value2\",\r\n    \"dummyKey3\": \"value3\",\r\n    \"dummyKey4\": \"value4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/items/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"items",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get item by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/items/647c314424b3ef367d1baf62",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"items",
+								"647c314424b3ef367d1baf62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ALL items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/items/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dummyKey4\": \"value5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/items/647c314424b3ef367d1baf62",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"items",
+								"647c314424b3ef367d1baf62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjMjZlNzIyNmY2OTJmNTVmMmQ4YWUiLCJpYXQiOjE2ODU4NTkzMjcsImV4cCI6MTY5Mzc0ODU2NX0.gWFLxXJaUkpKjFsK6Ekpw_3wH1AMBmbO0zFwKYgfNF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/items/647c3488acea7dd16eca1d51",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"items",
+								"647c3488acea7dd16eca1d51"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
